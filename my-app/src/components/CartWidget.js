@@ -1,10 +1,10 @@
-import carrito from "../carrito.png";
+import Carrito from "../assets/carrito.png"
 
 const CartWidget = () =>{
     return (
-        <div>
-        <img src="{carrito}" alt=""/>
-        </div>
+    <button className="botonCarro">
+        <img className="carrito" src={Carrito} alt=""/>
+    </button>
     );
 };
 
