@@ -1,8 +1,10 @@
+import carrito from "../carrito.png";
+
 const CartWidget = () =>{
     return (
-    <button>
-        <p>Aqui va el icono del carrito</p>
-    </button>
+        <div>
+        <img src="{carrito}" alt=""/>
+        </div>
     );
 };
 
