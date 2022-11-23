@@ -3,16 +3,16 @@ import Contenido  from './components/contenido';
 import './App.css';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar  from './components/NavBar';
-
+import { Layout } from "./components/Layout";
 
 function App() {
   return (
-    <div className="App">
+    <Layout> 
       <Header />  
       <NavBar />  
-      <ItemListContainer greeting={"Este texto se muestra gracias a greeting"} />
+      <ItemListContainer />
       <Contenido /> 
-    </div>
+      </Layout> 
   );
 }
 
