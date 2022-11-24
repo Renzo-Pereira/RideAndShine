@@ -1,10 +1,12 @@
 import Item from "./Item";
+import { Link } from "react-router-dom";
 
 const ItemList = ({ products }) => {
 return (
-    <ul className="flex items-center justify-center gap-4">
+    <ul>
+        
     {products.map((product) => (
-        <Item product={product} />
+        <Link to={`/item/${product.id}`}><Item key={product.name}product={product} /></Link>
     ))}
     </ul>
 );

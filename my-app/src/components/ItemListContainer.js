@@ -1,36 +1,38 @@
 import { useEffect, useState } from "react";
-import itemList from "./itemList";
-import {item} from "../mocks/item.mock"
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom";
+import ItemList from "./ItemList";
+import { Items } from "../mocks/item.mock";
 
 const ItemListContainer = () => {
-    const { category } = useParams();
-    const [products, setProducts] = useState([]);
+  const { category } = useParams();
+  const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        new Promise((resolve) =>
-    setTimeout (() => {
-        resolve(item);
-    }, 3000)
+  useEffect(() => {
+    new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(Items);
+      }, 2000)
     ).then((data) => {
-        if(category) {
-            const categories = data.filter(product => product.category === category)
-            setProducts(categories)
-        } else {
-            setProducts(data);
-        }
-    });
-        }, [category])
-
-    if (products.length === 0) {
-        return  <p>Loading...</p>;
-    }
-
-    return (
-        <div className="h-full">
-            <itemList products={products} />
-        </div>
+      if (category) {
+        const categories = data.filter(
+          (product) => product.category === category
         );
+        setProducts(categories);
+      } else {
+        setProducts(data);
+      }
+    });
+  }, [category]);
+
+  if (products.length === 0) {
+    return <p>Loading...</p>;
+  }
+
+  return (
+    <div>
+      <ItemList products={products} />
+    </div>
+  );
 };
 
-export default ItemListContainer;  
+export default ItemListContainer;

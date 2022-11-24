@@ -1,14 +1,16 @@
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
+
 
 const NavBar = () =>{
     return (
     <div className="">
                 <nav>
                 <ul className="menu">
-                <li><a href="#Inicio">Inicio</a></li>
-                <li><a href="#Catalogo">Catalogo</a></li>
-                <li><a href="#Nosotros">Nosotros</a></li>
-                <li><a href="#Contacto">Contacto</a></li>
+                <li><Link to="/">Inicio</Link></li>
+                <li><Link to="/category/ColorBlanco">Blancas</Link></li>
+                <li><Link to="/category/ColorAzul">Azules</Link></li>
+                <li><Link to="/contacto/:">Contacto</Link></li>
                 <CartWidget />
                 </ul>
                 

@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { item as itemMock } from "../mocks/item.mock";
+import { Items } from "../mocks/item.mock";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 const [item, setItem] = useState(null);
+const { id } = useParams();
 
 useEffect(() => {
-    new Promise((resolve) => setTimeout(() => resolve(itemMock[0]), 2000)).then(
-    (data) => setItem(data)
-    );
-}, []);
+  new Promise((resolve) =>
+    // Simulation of a call to an api
+    setTimeout(() => resolve(Items.find((item) => item.id === id)), 1000)
+  ).then((data) => setItem(data));
+}, [id]);
 
 if (!item) {
-    return <p>Loading...</p>;
+    return <p>Cargando...</p>;
 }
 
 return <ItemDetail item={item} />;
