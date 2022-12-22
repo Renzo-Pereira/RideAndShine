@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 
 const ItemList = ({ products }) => {
 return (
-    <ul>
-        
+    <ul className="Inicio">
     {products.map((product) => (
-        <Link to={`/item/${product.id}`}><Item key={product.name}product={product} /></Link>
+        <Link className="ItemInicio" to={`/item/${product.id}`}><Item key={product.name}product={product} /></Link>
     ))}
     </ul>
 );

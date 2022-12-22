@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { Items } from "../mocks/item.mock";
 import { useParams } from "react-router-dom";
+import { Loading } from "./Loading";
 
 const ItemDetailContainer = () => {
 const [item, setItem] = useState(null);
@@ -15,7 +16,7 @@ useEffect(() => {
 }, [id]);
 
 if (!item) {
-    return <p>Cargando...</p>;
+  return <Loading />;
 }
 
 return <ItemDetail item={item} />;

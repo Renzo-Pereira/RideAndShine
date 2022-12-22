@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { Items } from "../mocks/item.mock";
+import { Loading } from "./Loading";
 
 const ItemListContainer = () => {
   const { category } = useParams();
@@ -25,7 +26,7 @@ const ItemListContainer = () => {
   }, [category]);
 
   if (products.length === 0) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   return (
