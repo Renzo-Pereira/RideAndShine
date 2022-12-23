@@ -1,39 +1,17 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import ItemList from "./ItemList";
-import { Items } from "../mocks/item.mock";
+import { useGetItem } from "../hooks/useGetItem";
+import  ItemList  from "./ItemList";
 import { Loading } from "./Loading";
 
-const ItemListContainer = () => {
-  const { category } = useParams();
-  const [products, setProducts] = useState([]);
+export const ItemListContainer = () => {
+  const items = useGetItem();
 
-  useEffect(() => {
-    new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(Items);
-      }, 2000)
-    ).then((data) => {
-      if (category) {
-        const categories = data.filter(
-          (product) => product.category === category
-        );
-        setProducts(categories);
-      } else {
-        setProducts(data);
-      }
-    });
-  }, [category]);
-
-  if (products.length === 0) {
+  if (!items) {
     return <Loading />;
   }
 
   return (
-    <div>
-      <ItemList products={products} />
+    <div className="h-full">
+      <ItemList products={items} />
     </div>
   );
 };
-
-export default ItemListContainer;

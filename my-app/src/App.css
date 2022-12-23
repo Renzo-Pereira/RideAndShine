@@ -120,11 +120,11 @@ padding: 10px;
   width: 300px;
   height: 500px;
   border-radius: 20px;
-  border: 2px solid bisque;
-  background-color: aliceblue;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid bisque;
+  background-color: aliceblue;
 }
 
 .imgRemeras{
@@ -134,19 +134,6 @@ padding: 10px;
 .Inicio{
   display: flex;
   justify-content: space-around;
-}
-
-.ItemInicio{
-  color: black;
-  font-style: none;
-  text-decoration: none;
-  background-color: aliceblue;
-  width: 300px;
-  height: 500px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  text-align: center;
 }
 
 .ItemInicio, img{
@@ -190,6 +177,9 @@ padding: 10px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: aliceblue;
+  border-radius: 10px;
+  border: 2px solid bisque;
 }
 
 .Empty{
@@ -201,4 +191,17 @@ padding: 10px;
 .Cargando{
   display: flex;
   justify-content: center;
+}
+
+.PrecioStock{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.BotonBorrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
