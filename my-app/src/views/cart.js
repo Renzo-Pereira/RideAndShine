@@ -36,7 +36,7 @@ const CartView = () => {
       .reduce((previousValue, currentValue) => previousValue + currentValue);
 
     const order = {
-      buyer: { name: "Jorge", phone: "123", email: "a@asas.com" },
+      buyer: { name: "", phone: "", email: "" },
       items,
       total,
     };
@@ -64,8 +64,8 @@ const CartView = () => {
           .then(() => {
             clear();
             setIsLoading(false);
+            navigate("/contacto/:");
             alert("Compra finalizada");
-            navigate("/");
           })
           .catch((err) => console.error(err));
       });
@@ -88,7 +88,7 @@ const CartView = () => {
 
                 return (
                   <div className="BotonBorrar">
-                    <Item
+                    <Item 
                       product={product.item}
                       quantityAdded={quantityAdded}
                     />
@@ -101,7 +101,7 @@ const CartView = () => {
               {isLoading ? (
                 <Loading size="50px" />
               ) : (
-                <button className="boton_personalizado" onClick={handleFinalizePurchase}>
+                <button className="boton_personalizado" onClick={handleFinalizePurchase} >
                   Finalizar Compra
                 </button>
               )}
