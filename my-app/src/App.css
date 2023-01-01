@@ -1,4 +1,3 @@
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -133,7 +132,9 @@ padding: 10px;
 
 .Inicio{
   display: flex;
-  justify-content: space-around;
+  margin: 0px;
+  padding: 0;
+  border: 0;
 }
 
 .ItemInicio, img{
@@ -143,12 +144,6 @@ padding: 10px;
 .descripcion{
   font-size: 14px;
 }
-
-.MenuDespegable{
-  text-decoration: none;
-  color: black
-}
-
 
 .boton_personalizado{
   text-decoration: none;
@@ -182,6 +177,10 @@ padding: 10px;
   border: 2px solid bisque;
 }
 
+.ItemCarrito:hover {
+  transform: translate(0px, 10px);
+}
+
 .Empty{
   display: flex;
   flex-direction: column;
@@ -204,4 +203,25 @@ padding: 10px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.articulos{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.categorias{
+  width: 250px;
+  height: 200px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.MenuDespegable{
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
 }

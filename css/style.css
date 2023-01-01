@@ -96,3 +96,8 @@ main {
     font-size: 100px;
     margin-left: 50px;
 }
+
+.contenidoA{
+  display: flex;
+  flex-direction: row;
+}
