@@ -76,7 +76,7 @@ const CartView = () => {
     <Layout>
       <div>
         {items.length === 0 ? (
-          <div className="Empty">
+          <div className="CarritoVacio">
             <img src={empty} alt="Empty Cart" />
             <h1>No has agregado productos</h1>
           </div>
