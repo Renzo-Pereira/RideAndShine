@@ -10,11 +10,7 @@ const CartWidget = () => {
   return (
     <div>
       <Link to="/cart" className="relative">
-        <button
-          type="button">
-          <img className="carrito" src={Carrito} alt=""/>
-
-        </button>
+        <button type="button" className="botonCarrito"> <img className="carrito" src={Carrito} alt=""/> </button>
         {count > 0 && (
           <span className="boton_personalizado">
             {count}

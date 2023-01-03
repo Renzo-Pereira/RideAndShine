@@ -23,21 +23,17 @@ export const Item = ({ product, quantityAdded }) => {
         <img
           src={img} alt="Product"
         />
-        <span>
+        <span className="protuctName">
           {product.name.length > 20 ? `${title} ...` : product.name}
         </span>
         <hr />
-        <p>
-          {product.description.length > 30
-            ? `${description} ...`
-            : product.description}
-        </p>
+        <p className="productDescription">{product.description.length > 30 ? `${description} ...` : product.description}</p>
       </div>
       <div>
         <hr/>
         <div className="PrecioStock">
-          <span className="font-bold">${product.price}</span>
-          <span className="text-xs">
+          <span className="protuctPrice">${product.price}</span>
+          <span className="proprotuctStock">
             {quantityAdded ? "Agregados" : "En Stock"}:{" "}
             {quantityAdded || product.stock}
           </span>

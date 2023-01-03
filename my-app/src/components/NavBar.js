@@ -9,6 +9,7 @@ const NavBar = () =>{
                 <ul className="menu">
                 <li><Link className="nav" to="/">Inicio</Link></li>
                 <li><Link className="nav" to="/contacto/:">Contacto</Link></li>
+                <li><a className="nav" href="#nosotros">Nosotros</a></li>
                 <CartWidget />
                 </ul>
             </nav>

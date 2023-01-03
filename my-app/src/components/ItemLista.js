@@ -19,6 +19,9 @@ return (
           <li>
           <Link className="MenuDespegable" to="/category/ColorNegro">Remeras Negras</Link>
           </li>
+          <li>
+          <Link className="MenuDespegable" to="/category/ColorRosa">Remeras Rosa</Link>
+          </li>
         </ul>
       </div>
       <div className="articulos">
