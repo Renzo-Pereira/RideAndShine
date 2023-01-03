@@ -59,7 +59,7 @@ nav{
   background-image: url("./assets/fondo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: -325px;
+  background-position-y: -366px;
 }
 
 li{
@@ -69,13 +69,13 @@ li{
 
 .nav{
   text-decoration: none;
-  font-size: small;
+  font-size: medium;
   color: black;
   font-weight: 500;
 }
 
 .carrito{
-  height: 50px;
+  height: 25px;
 }
 
 .botonCarrito {
