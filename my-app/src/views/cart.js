@@ -7,12 +7,14 @@ import { TrashWidget } from "../components/TrashWidget";
 import { CartContext } from "../context/cartContext";
 import empty from "../assets/LogoNegroTrasparente.png";
 
+
 import {
   addDoc,
   collection,
   doc,
   getFirestore,
   updateDoc,
+  serverTimestamp
 } from "firebase/firestore";
 
 const CartView = () => {
@@ -35,15 +37,16 @@ const CartView = () => {
       )
       .reduce((previousValue, currentValue) => previousValue + currentValue);
 
-    const order = {
-      buyer: { name: "", phone: "", email: "" },
-      items,
-      total,
-    };
+      const order = {
+        Comprador: { Cliente: document.getElementById('validationCustom01').value, Celular: document.getElementById('validationCustom02').value, Email: document.getElementById('validationCustom03').value, },
+        items,
+        total,
+        Fecha:serverTimestamp(),
+      };
     const db = getFirestore();
-    const ordersCollection = collection(db, "orders");
+    const ordersCollection = collection(db, "Pedidos");
 
-    addDoc(ordersCollection, order)
+    addDoc(ordersCollection, order).then(OrdenN => console.log(OrdenN.id))
       .then(() => {
         setUpdatingProducts(true);
       })
@@ -65,7 +68,7 @@ const CartView = () => {
             clear();
             setIsLoading(false);
             navigate("/contacto/:");
-            alert("Compra finalizada");
+            alert("Compra finalizada Su numero de pedido es + ");
           })
           .catch((err) => console.error(err));
       });
@@ -101,9 +104,31 @@ const CartView = () => {
               {isLoading ? (
                 <Loading size="50px" />
               ) : (
-                <button className="boton_personalizado" onClick={handleFinalizePurchase} >
-                  Finalizar Compra
-                </button>
+                <div className="total">
+                  <span>Total a pagar: ${totalAmount}</span>
+                  <form className="row g-3 needs-validation">
+  <div className="col-md-4">
+    <label  className="form-label">Nombre</label>
+    <input type="text" className="form-control" id="validationCustom01" required></input>
+  </div>
+  <div className="col-md-4">
+    <label  className="form-label">Celular</label>
+    <input type="text" className="form-control" id="validationCustom02" required></input>
+  </div>
+  <div className="col-md-4">
+    <label  className="form-label">Email</label>
+    <input type="text" className="form-control" id="validationCustom03" required></input>
+  </div>
+  <div className="col-12">
+  </div>
+</form>
+                  <button
+                    onClick={handleFinalizePurchase}
+                    className="boton_personalizado"
+                  >
+                    Finalizar Compra
+                  </button>
+                </div>
               )}
             </div>
           </div>

@@ -113,6 +113,7 @@ li{
   background-color: black;
   border-radius: 6px;
   border: 2px solid bisque;
+  margin-top: 5px;
 }
 .boton_personalizado:hover{
   color: black;
@@ -131,6 +132,15 @@ li{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.borrar{
+  margin: 0;
+}
+
+.total{
+  display: flex;
   flex-direction: column;
 }
 /* --- */
@@ -414,6 +424,7 @@ li{
   background-color: black;
   border-radius: 6px;
   border: 2px solid bisque;
+  margin-top: 5px;
 }
 .boton_personalizado:hover{
   color: black;
@@ -432,6 +443,15 @@ li{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.borrar{
+  margin: 0;
+}
+
+.total{
+  display: flex;
   flex-direction: column;
 }
 /* --- */

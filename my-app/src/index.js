@@ -8,6 +8,7 @@ import { router } from './router';
 
 
 import { initializeApp } from "firebase/app";
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDM30-8hne_yUs2t32jfz63Nz7hds6tZ9E",
@@ -18,7 +19,8 @@ const firebaseConfig = {
   appId: "1:46747415893:web:6d7f9a22a81f999d07abdc"
 };
 
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
