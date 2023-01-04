@@ -1,10 +1,14 @@
+import empty from "../assets/LogoNegroTrasparente.png";
 
 function Contenido() {
     return (
     <div className="footer">
         <div id="nosotros" className="contenedorMarca">
+            <div className="subLogo">
             <h2 className="Marca">Ride And Shine</h2>
-            <p className="textoMarca">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet magnam saepe vero temporibus atque
+            <img src={empty} alt="Empty Cart" />
+            </div>
+            <p className="textoFooter">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet magnam saepe vero temporibus atque
             consequatur
             natus soluta sit assumenda corporis? Sapiente, officia? Esse quas asperiores, sapiente unde quasi aliquam
             eaque
@@ -46,6 +50,25 @@ function Contenido() {
                 </svg>
                 <a className="textoContacto" href="https://www.instagram.com/rideandshine.uy/">@rideandshine.uy</a>
             </div>
+        </div>
+        <div className="contenedorEnvios">
+            <h2 className="Envios">Envios</h2>
+            <p className="textoFooter">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet magnam saepe vero temporibus atque
+            consequatur
+            natus soluta sit assumenda corporis? Sapiente, officia? Esse quas asperiores, sapiente unde quasi aliquam
+            eaque
+            et voluptates nobis repellat natus sequi odit! Ducimus totam voluptate eos impedit, accusamus dolorum eum ut
+            aliquam animi vel</p>
+        </div>
+        
+        <div className="contenedorPago">
+            <h2>Metodos de Pago</h2>
+            <p className="textoFooter">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet magnam saepe vero temporibus atque
+            consequatur
+            natus soluta sit assumenda corporis? Sapiente, officia? Esse quas asperiores, sapiente unde quasi aliquam
+            eaque
+            et voluptates nobis repellat natus sequi odit! Ducimus totam voluptate eos impedit, accusamus dolorum eum ut
+            aliquam animi vel</p>
         </div>
     </div>
     )

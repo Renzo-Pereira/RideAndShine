@@ -1,5 +1,4 @@
 import { Item } from "./Item";
-import { Link } from "react-router-dom";
 
 const ItemList = ({ products }) => {
 return (
@@ -8,19 +7,19 @@ return (
     <div>
         <ul className="categorias">
           <li>
-          <Link className="categoriasItem" to="/category/ColorAzul">Remeras Azules</Link>
+          <a className="categoriasItem" href="/category/ColorAzul">Remeras Azules</a>
           </li>
           <li>
-          <Link className="categoriasItem" to="/category/ColorBeige">Remeras Beige</Link>
+          <a className="categoriasItem" href="/category/ColorBlanco">Remeras Blancas</a>
           </li>
           <li>
-          <Link className="categoriasItem" to="/category/ColorBlanco">Remeras Blancas</Link>
+          <a className="categoriasItem" href="/category/ColorBeige">Remeras Beige</a>
           </li>
           <li>
-          <Link className="categoriasItem" to="/category/ColorNegro">Remeras Negras</Link>
+          <a className="categoriasItem" href="/category/ColorNegro">Remeras Negras</a>
           </li>
           <li>
-          <Link className="categoriasItem" to="/category/ColorRosa">Remeras Rosa</Link>
+          <a className="categoriasItem" href="/category/ColorRosa">Remeras Rosas</a>
           </li>
         </ul>
       </div>
@@ -35,4 +34,8 @@ return (
 };
 
 export default ItemList;
+
+
+
+
 

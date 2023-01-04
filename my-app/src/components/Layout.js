@@ -4,8 +4,10 @@ import Header from "./header";
 export const Layout = ({children}) => {
     return (
         <main>
+        <div className="backgroundHeader">
         <Header />  
-        <NavBar /> 
+        <NavBar />
+        </div>
         {children}
         </main>
     );
