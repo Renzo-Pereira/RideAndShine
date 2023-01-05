@@ -27,6 +27,11 @@ ul{
   display: flex;
   justify-content: center;
 }
+
+.Gracias{
+  display: flex;
+  justify-content: center;
+}
 /* --- */
 
 /* ---------------------------------Header--------------------------------- */
@@ -334,6 +339,11 @@ ul{
 }
 
 .Cargando{
+  display: flex;
+  justify-content: center;
+}
+
+.Gracias{
   display: flex;
   justify-content: center;
 }

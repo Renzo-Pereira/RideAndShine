@@ -21,7 +21,7 @@ const CartView = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [updatingProducts, setUpdatingProducts] = useState(false);
   const navigate = useNavigate();
-
+  const [OrdenN, setOrdenN] = useState("");
   const { productsAdded: items, clear, totalAmount } = useContext(CartContext);
 
   const getTotalByProduct = (quantity, price) => {
@@ -46,7 +46,7 @@ const CartView = () => {
     const db = getFirestore();
     const ordersCollection = collection(db, "Pedidos");
 
-    addDoc(ordersCollection, order).then(OrdenN => console.log(OrdenN.id))
+    addDoc(ordersCollection, order).then(Orden => setOrdenN(Orden.id))
       .then(() => {
         setUpdatingProducts(true);
       })
@@ -68,7 +68,7 @@ const CartView = () => {
             clear();
             setIsLoading(false);
             navigate("/contacto/:");
-            alert("Compra finalizada Su numero de pedido es + ");
+            alert('Compra finalizada Su numero de pedido es '+ OrdenN);
           })
           .catch((err) => console.error(err));
       });

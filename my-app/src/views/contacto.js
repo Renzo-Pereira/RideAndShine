@@ -3,7 +3,7 @@ import { Layout } from "../components/Layout";
 const Contacto = () =>{
 
     return  <Layout>
-<h2>Gracias</h2>
+<h2 className="Gracias">Gracias por su compra</h2>
         </Layout>
 }
 
