@@ -7,7 +7,7 @@ export const TrashWidget = ({ itemId }) => {
   return (
     <button
       onClick={() => removeItem(itemId)}
-      className="boton_personalizado"
+      className="btn_personalizado"
     >
       <p className="borrar">Borrar item</p>
     </button>

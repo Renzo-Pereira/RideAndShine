@@ -124,7 +124,7 @@ const CartView = () => {
 </form>
                   <button
                     onClick={handleFinalizePurchase}
-                    className="boton_personalizado"
+                    className="btn_personalizado"
                   >
                     Finalizar Compra
                   </button>

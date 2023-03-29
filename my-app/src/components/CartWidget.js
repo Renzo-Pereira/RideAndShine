@@ -12,7 +12,7 @@ const CartWidget = () => {
       <Link to="/cart">
         <button type="button" className="botonCarrito"> <img className="carrito" src={Carrito} alt=""/> </button>
         {count > 0 && (
-          <span className="boton_personalizado">
+          <span className="btn_personalizado">
             {count}
           </span>
         )}
