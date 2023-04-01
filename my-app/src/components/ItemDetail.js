@@ -4,6 +4,7 @@ import { CartContext } from "../context/cartContext";
 import { ItemCount } from "./ItemCount";
 import { useGetItemArray } from "../hooks/useGetItemArray";
 import { useGetItemImg } from "../hooks/useGetItemImg";
+import { event } from "jquery";
 
 const ItemDetail = ({ item }) => {
   const { addItem } = useContext(CartContext);
@@ -11,7 +12,6 @@ const ItemDetail = ({ item }) => {
   const [count, setCount] = useState(1);
   const [currentStock, setCurrentStock] = useState(item.stock);
   const maxQuantity = currentStock;
-  const img = useGetItemImg(item.img);
   let imagenes = useGetItemArray(item.array[0]);
   let imagenes1 = useGetItemArray(item.array[1]);
   let imagenes2 = useGetItemArray(item.array[2]);
@@ -24,6 +24,20 @@ const ItemDetail = ({ item }) => {
   const [stockTalleM, setStockTalleM] = useState(false);
   const [stockTalleL, setStockTalleL] = useState(false);
   const [stockTalleXL, setStockTalleXL] = useState(false);
+  const valorTalleS = document.getElementById('botonTalleS')
+  const valorTalleM = document.getElementById('botonTalleM')
+  const valorTalleL = document.getElementById('botonTalleL')
+  const valorTalleXL = document.getElementById('botonTalleXL')
+  const bordeS = document.querySelector("#bordeS");
+  const bordeM = document.querySelector("#bordeM");
+  const bordeL = document.querySelector("#bordeL");
+  const bordeXL = document.querySelector("#bordeXL");
+  const [tallesSeleccionados, setTallesSeleccionados] = useState({
+    S: "",
+    M: "",
+    L: "",
+    XL: ""
+  });
 
   function handleCount(type) {
     if (type === "plus" && count < maxQuantity) setCount(count + 1);
@@ -40,30 +54,30 @@ const ItemDetail = ({ item }) => {
 
   function handleCheckout() {
     navigate("/cart");
-  }
+  } 
 
-  const prueba = e => {
+  const stockTalle = e => {
     if (stockS > 0) {
       setStockTalleS(true)
     } else {
       setStockTalleS(false)
     }
   }
-  const prueba2 = e => {
+  const stockTalle2 = e => {
     if (stockM > 0) {
       setStockTalleM(true)
     } else {
       setStockTalleM(false)
     }
   }
-  const prueba3 = e => {
+  const stockTalle3 = e => {
     if (stockL > 0) {
       setStockTalleL(true)
     } else {
       setStockTalleL(false)
     }
   }
-  const prueba4 = e => {
+  const stockTalle4 = e => {
     if (stockXL > 0) {
       setStockTalleXL(true)
     } else {
@@ -71,12 +85,52 @@ const ItemDetail = ({ item }) => {
     }
   }
 
-  function pruebas() {
-    prueba();
-    prueba2();
-    prueba3();
-    prueba4();
+  function comprobacionTalles() {
+    stockTalle();
+    stockTalle2();
+    stockTalle3();
+    stockTalle4();
   }
+
+  const check = document.getElementById('cbox2');
+  if (check) {
+    check.addEventListener('click', (e) => {
+      e.target.disabled = true
+    });
+  }
+
+  document.addEventListener('click', function (event) {
+    if (event.target == valorTalleS) {
+      setTallesSeleccionados(previousState => {
+        return { ...previousState, S: "S" }});
+      event.target.disabled = true
+      bordeS.classList.add("prueba")
+    }
+  })
+  document.addEventListener('click', function (event) {
+    if (event.target == valorTalleM) {
+      setTallesSeleccionados(previousState => {
+        return { ...previousState, M: "M" }});
+      event.target.disabled = true
+      bordeM.classList.add("prueba")
+    }
+  })
+  document.addEventListener('click', function (event) {
+    if (event.target == valorTalleL) {
+      setTallesSeleccionados(previousState => {
+        return { ...previousState, L: "L" }});
+      event.target.disabled = true
+      bordeL.classList.add("prueba")
+    }
+  })
+  document.addEventListener('click', function (event) {
+    if (event.target == valorTalleXL) {
+      setTallesSeleccionados(previousState => {
+        return { ...previousState, XL: "XL" }});
+      event.target.disabled = true
+      bordeXL.classList.add("prueba")
+    }
+  })
 
   return (
     <div className="DetallesPadre">
@@ -95,23 +149,23 @@ const ItemDetail = ({ item }) => {
             <p className="DetallesTexto">{item.description}</p>
             <h3>{"$" + item.price}</h3>
             <label>Slecciona talle</label>
-            <input onClick={pruebas} type="checkbox" id="cbox2" value="second_checkbox"></input>
+            <input onClick={comprobacionTalles} type="checkbox" id="cbox2" value="second_checkbox"></input>
 
             <div className="btn-toolbar">
-              <div className="me-2">
-                <button className="btn btn-dark" value={"S"} id="botonTalle" disabled={!stockTalleS}>S</button>
+              <div className="me-2" id="bordeS">
+                <button className="btn btn-dark " value={"S"} id="botonTalleS" disabled={!stockTalleS}>S</button>
               </div>
 
-              <div className="me-2">
-                <button className="btn btn-dark" value={"M"} id="botonTalle" disabled={!stockTalleM}>M</button>
+              <div className="me-2" id="bordeM">
+                <button className="btn btn-dark" value={"M"} id="botonTalleM" disabled={!stockTalleM}>M</button>
               </div>
 
-              <div className="me-2">
-                <button className="btn btn-dark" value={"L"} id="botonTalle" disabled={!stockTalleL}>L</button>
+              <div className="me-2" id="bordeL">
+                <button className="btn btn-dark" value={"L"} id="botonTalleL" disabled={!stockTalleL}>L</button>
               </div>
 
-              <div>
-                <button className="btn btn-dark" value={"XL"} id="botonTalle" disabled={!stockTalleXL}>XL</button>
+              <div id="bordeXL">
+                <button className="btn btn-dark" value={"XL"} id="botonTalleXL" disabled={!stockTalleXL}>XL</button>
               </div>
 
             </div>
@@ -140,8 +194,6 @@ const ItemDetail = ({ item }) => {
     </div>
   );
 };
-
-
 
 export default ItemDetail;
 

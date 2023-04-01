@@ -6,8 +6,6 @@ import { Loading } from "../components/Loading";
 import { TrashWidget } from "../components/TrashWidget";
 import { CartContext } from "../context/cartContext";
 import empty from "../assets/LogoNegroTrasparente.png";
-
-
 import {
   addDoc,
   collection,
@@ -16,6 +14,7 @@ import {
   updateDoc,
   serverTimestamp
 } from "firebase/firestore";
+
 
 const CartView = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -54,6 +53,8 @@ const CartView = () => {
       .finally(() => {});
   };
 
+
+  
   useEffect(() => {
     if (updatingProducts) {
       const db = getFirestore();

@@ -9,7 +9,6 @@ import 'bootstrap/js/dist/dropdown';
 function App() {
   return (
       <Layout> 
-        <ItemListContainer />
           <Contenido /> 
         </Layout>  
   );
